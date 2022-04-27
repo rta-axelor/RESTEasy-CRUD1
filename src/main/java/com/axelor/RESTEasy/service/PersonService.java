@@ -8,10 +8,11 @@ public interface PersonService {
 
 	public boolean addPerson(Person p);
 	public List<Person> getAllPersons();
-	public boolean updatePerson(int personId, String personName,String contactNumber);
+	public boolean updatePerson(int personId, String personName, String contactNum );
 	
 	public boolean deletePersonById(Integer id);
 	  public Person getPersonById(Integer id) ;
 	
 	
 }
+

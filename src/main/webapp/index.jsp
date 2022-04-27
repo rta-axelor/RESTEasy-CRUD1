@@ -26,21 +26,12 @@
 		if (y == "") {
 			alert("Contact must be filled out");
 			return false;
-		}
-		
-		
-		/* var z = document.forms["person"]["contactType[0]"].value;
-		if (z == "contacttype") {
-			alert("please select contact type");
-			return false;
-		} */
-		
+		}	
 	} 
 	
 	function add(divName) {
 		var newDiv = document.createElement('div');
-		var selectHTML = '<br>Contact number : <INPUT TYPE="NUMBER" NAME="contact['+count+']" size="10" />';
-		selectHTML += '<SELECT name="contact['+count+']"> <OPTION value="Personal">Personal</OPTION><OPTION value="College">College</OPTION><OPTION value="Work">Work</OPTION> <OPTION value="Others">Others</OPTION></SELECT> ';
+		var selectHTML = '<br>Contact number : <INPUT TYPE="NUMBER" NAME="contact['+count+']" size="10" />'; 
 		newDiv.innerHTML = selectHTML;
 		document.getElementById(divName).appendChild(newDiv);
 		count++;
@@ -61,15 +52,7 @@
 			<br><br>
 			 Name :&nbsp; <INPUT TYPE="TEXT" NAME="name" size="20"> <br><br>
 			 Contact Number: &nbsp;<INPUT 	TYPE="NUMBER" NAME="contact[0]" size="10" /> 
-			<!--  <SELECT name="contactType[0]">
-				<OPTION value="contacttype" selected disabled>--Select Type--</OPTION>
-				<OPTION value="Personal">Personal</OPTION>
-				<OPTION value="College">College</OPTION>
-				<OPTION value="Work">Work</OPTION>
-				<OPTION value="Others">Others</OPTION>
-			</SELECT>  -->
-			
-			<!-- <INPUT type="button" value="Add" onclick="add('dynamicInput')" /> <br> -->
+			<INPUT type="button" value="Add" onclick="add('dynamicInput')" /> <br> 
 		<div id="dynamicInput"></div> 
 			
 			<br><br>
@@ -86,7 +69,6 @@
 	<%-- 	</center> --%>
 	<br>
 	
-	
 	<br><br>
 		<table border="1">
 			<tr>
@@ -97,7 +79,6 @@
 				<th>Action Delete</th>
 				
 			</tr>
-			
 			
 			<c:forEach items="${personList}" var="person"> ${Contact.contact}   
 				<tr>

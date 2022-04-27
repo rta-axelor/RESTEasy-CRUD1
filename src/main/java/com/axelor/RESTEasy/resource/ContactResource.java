@@ -1,6 +1,7 @@
 package com.axelor.RESTEasy.resource;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -26,7 +27,7 @@ public class ContactResource {
 	  @Path("/get/{cid}")
 	  public View getContactByid(@PathParam("cid") Integer cid) {
 		  Contact contact = cs.contactById(cid);
-			System.out.println("View getContactByid  :: " + contact.getContact() /* + contact.getContactType() */);
+			System.out.println("View getContactByid  :: " + contact.getContact());
 	    return new View("/contactView.jsp", contact, "contactObj");
 	  }
 
@@ -35,10 +36,9 @@ public class ContactResource {
 	  public void updateContact(@Context HttpServletResponse response,   @Context HttpServletRequest request) throws IOException {
 
 	    Integer id = Integer.parseInt(request.getParameter("id"));
-	   // String contactType = request.getParameter("contactType");
-	    String contact = request.getParameter("contact");
+	    String contact = request.getParameter("contact[0]");
 
-		Contact c = new Contact(id, /* contactType, */ contact);
+		Contact c = new Contact(id, contact);
 	    cs.updateContact(c);
 	    response.sendRedirect(request.getContextPath() + "/person/get");
 	  }

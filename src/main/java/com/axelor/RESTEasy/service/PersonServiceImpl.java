@@ -22,7 +22,6 @@ public class PersonServiceImpl implements PersonService{
 		
 		EntityManager em = emp.get();
 		em.persist(p);
-		//System.out.println(p.getName());
 		return true;
 	}
 
@@ -46,13 +45,13 @@ public class PersonServiceImpl implements PersonService{
 
 	@Transactional
 	@Override
-	public boolean updatePerson(int personId, String personName,String contactNumber) {
+	public boolean updatePerson(int personId, String personName,String contactNum) {
 		
 		 EntityManager em = emp.get();
 		 Person person = em.find(Person.class, personId);
 		 person.setName(personName);
 
-		 person.getContact().get(0).setContact(contactNumber);
+		 person.getContact().get(0).setContact(contactNum);
 		 em.merge(person);
 		 
 		    return true;

@@ -32,8 +32,7 @@
 	
 	function add(divName) {
 		var newDiv = document.createElement('div');
-		var selectHTML = '<br>Contact Number : <INPUT TYPE="TEXT" NAME="contact['+count+']" size="30" />';
-		selectHTML += '<SELECT name="contact['+count+']"> <OPTION value="Personal">Personal</OPTION><OPTION value="College">College</OPTION><OPTION value="Work">Work</OPTION> <OPTION value="Others">Others</OPTION></SELECT> ';
+		var selectHTML = '<br>Contact Number : <INPUT TYPE="TEXT" NAME="contact['+count+']" size="10" />';
 		newDiv.innerHTML = selectHTML;
 		document.getElementById(divName).appendChild(newDiv);
 		count++;
@@ -47,44 +46,26 @@
 	}
 </script>
 </head>
-
 <body>
 <center>
 		<h3>Edit Form</h3>
 		<%
 		  Person p = (Person) request.getAttribute("PersonObj");
 		%>
-
 		<FORM ACTION="<%=request.getContextPath()%>/person/update" METHOD="POST" name="person">
 			Person Id :<% out.print(" " + p.getId());%><br> <br>
 			<INPUT TYPE="hidden" NAME="personId" VALUE="<%=p.getId()%>"> 
 			 Name:<INPUT TYPE="TEXT" NAME="name" VALUE="<%=p.getName()%>"> <br>
-				
 			<% for(int i = 0; i <p.getContact().size(); i++) { %>
-		
 				<br> 
-				
 				Contact Numbers:
 				<INPUT TYPE="VARCHAR" NAME="contact[<%=i%>]" 	value="<%=p.getContact().get(i).getContact()%>" />
 				<INPUT TYPE="hidden" NAME="contactId" VALUE="<%=p.getContact().get(i).getId()%>"> 
-				<%-- <SELECT name="contactType">
-					<OPTION value="Personal" <% if(p.getContact().get(i).getContactType().equals("Personal")) { %> selected <% } %> >Personal</OPTION>
-					<OPTION value="College" <% if(p.getContact().get(i).getContactType().equals("College")) { %> selected <% } %> >College</OPTION>
-					<OPTION value="Work" <% if(p.getContact().get(i).getContactType().equals("Work")) { %> selected <% } %> >Work</OPTION>
-					<OPTION value="Others" <% if(p.getContact().get(i).getContactType().equals("Others")) { %> selected <% } %> >Others</OPTION>
-				</SELECT> --%>
-
-				
 				<br>
 				<br>
 		<% } %>
-		
-		
 			<br>
-			<!-- <input type="button" value="Add More Contacts" onclick="add('dynamicInput')">  -->
 			<INPUT TYPE="SUBMIT" VALUE="SUBMIT" />
-
-
 		</FORM>
 	</center>
 </body>

@@ -16,8 +16,6 @@ import javax.persistence.OneToMany;
 
 public class Person {
 	
-	
-	
 	@Id
     @GeneratedValue	(strategy = GenerationType.IDENTITY)   
 	Integer id;
@@ -35,36 +33,25 @@ public class Person {
 	this.name = name;
 	this.contact=contact;
 	
-	
-	
 	}
-
 	public Integer getId() {
 		return id;
 	}
-
 	public void setId(Integer id) {
 		this.id = id;
 	}
-
 	public String getName() {
 		return name;
 	}
-
 	public void setName(String name) {
 		this.name = name;
 	}
-
 	public List<Contact> getContact() {
 		return contact;
 	}
-
 	public void setContact(List<Contact> contact) {
 		this.contact = contact;
 	}
-
-
-
 	@Override
 	public String toString() {
 		return this.name;

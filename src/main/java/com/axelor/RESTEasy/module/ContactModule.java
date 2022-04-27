@@ -21,7 +21,6 @@ public class ContactModule extends AbstractModule {
 	    bind(PersonService.class).to(PersonServiceImpl.class);
 	    bind(ContactService.class).to(ContactServiceImpl.class);
 	  
-
 	  }
 	  	
 }

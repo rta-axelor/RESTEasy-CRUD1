@@ -23,10 +23,9 @@ public class ContactServiceImpl implements ContactService{
 	public boolean updateContact(Contact contact) {
 		
 		EntityManager em = emp.get();
-		System.out.println("ContactServiceImpl.updateContact" + contact.getContact()/* + contact.getContactType() */);
-	    Contact c = em.find(Contact.class, contact.getId());
+		System.out.println("ContactServiceImpl.updateContact" + contact.getContact());
+	    Contact c = em.find(Contact.class,contact.getId());
 	    c.setContact(contact.getContact());
-	   // c.setContactType(contact.getContactType());
 	    return true;
 	}
 

@@ -1,7 +1,6 @@
 package com.axelor.RESTEasy.db;
 
 import javax.persistence.Entity;
-
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -14,19 +13,17 @@ public class Contact {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	private String contact;
-	//private String contactType;
+	
 	
 	public Contact() {}
 	
-	public Contact(/* String contactType, */ String contact) {  
+	public Contact(String contact) {  
 
-	    //this.contactType = contactType;
 	    this.contact = contact;
 	  }
 
-		public Contact(Integer id, /* String contactType, */ String contact) { 
+		public Contact(Integer id,String contact) { 
 	    this.id = id;
-	    //this.contactType = contactType;
 	    this.contact = contact;
 	  }
 	
@@ -42,10 +39,4 @@ public class Contact {
 	public void setContact(String contact) {
 		this.contact = contact;
 	}
-//	public String getContactType() {
-//		return contactType;
-//	}
-//	public void setContactType(String contactType) {
-//		this.contactType = contactType;
-//	}
 }
