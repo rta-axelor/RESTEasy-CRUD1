@@ -33,12 +33,12 @@ public class PersonResources {
 
 		int count = Integer.parseInt(request.getParameter("count"));
 	    List<Contact> list = new ArrayList<Contact>();
-		String /* contactType, */ contact	;
+		String contact	;
 
 	    for (int i = 0; i < count; i++) {
-	    	//contactType = request.getParameter("contactType[" + i + "]");
+	    	
 	    	contact = request.getParameter("contact[" + i + "]");
-			list.add(new Contact(/* contactType, */contact));
+			list.add(new Contact(contact));
 	    }
 	    
 	    Person p = new Person(request.getParameter("name") , list);
