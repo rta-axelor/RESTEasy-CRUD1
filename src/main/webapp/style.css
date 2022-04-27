@@ -1,0 +1,48 @@
+@charset "UTF-8";
+
+table {
+	border-collapse: collapse;
+ 	width: 50%; 
+}
+
+th , td {
+	text-align: center;
+	padding: 15px;
+}
+
+
+tr:nth-child(even) {
+	background-color: "green"
+}
+
+tr:nth-child(odd) {
+	background-color: "red";
+}
+
+th {
+	background-color: #C71585;
+	color: white;
+}
+
+
+h1 {
+	text-align : center;
+    color: purple;
+    margin-left: 20px;
+}
+
+fieldset {
+	border: 2px solid silver;
+	background-color:#CCFFFF;
+	font-size : 15px;
+	width : 50%;
+	text-align : left;
+}
+
+fieldset legend {
+	border: 2px solid silver;
+	margin-left: 30px;
+	background-color:#333366;
+	color  : white;
+	font-size : 20px;
+}
