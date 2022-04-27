@@ -66,17 +66,10 @@ public class PersonResources {
 	  public void updatePerson(@Context HttpServletResponse response,   @Context HttpServletRequest request) throws IOException 
 	  {	 
 		  int personId = Integer.parseInt(request.getParameter("personId"));
-		 // int contactId = Integer.parseInt(request.getParameter("contactId"));
+		
 		  
 	    String personName = request.getParameter("name");
-//	  	String contactNum = null;	
-//		  int l = Integer.parseInt(request.getParameter("count"));
-//		  List<String> list = new ArrayList<String>();
-//		  for(int i=0; i<l; i++) {
-//			  list.add(new String( request.getParameter("contact["+i+"]")));
-//		  }
-		  
-		String contactNum = request.getParameter("contact[0]");
+	    String contactNum = request.getParameter("contact[0]");
 	   
 		ps.updatePerson(personId,personName,contactNum);
 	    response.sendRedirect(request.getContextPath() + "/person/get");
